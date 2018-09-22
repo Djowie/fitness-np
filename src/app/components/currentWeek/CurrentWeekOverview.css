@@ -1,0 +1,10 @@
+.table-running-average {
+  background-color: #f9fafb;
+  border-left: 1px solid #dededf;
+  color: #dededf;
+}
+
+.weekoverview-date {
+  font-size: 10px;
+  color: #bebebe;
+}

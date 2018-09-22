@@ -122,7 +122,7 @@ export class CurrentWeekOverview extends Component {
         name: "Protein"
       },
       {
-        key: "carbohydrated",
+        key: "carbohydrates",
         name: "Carboydrates"
       },
       {

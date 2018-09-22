@@ -20,7 +20,12 @@ export class TableRow extends Component {
     const daysLeft = [];
     const numberOfLoops = 7 - weekData.length;
     for (let i = 0; i < numberOfLoops; i++) {
-      daysLeft.push(<Table.Cell key={i} selectable />);
+      daysLeft.push(
+        <Table.Cell key={i} selectable textAlign="center">
+          {" "}
+          -{" "}
+        </Table.Cell>
+      );
     }
 
     return (
@@ -30,7 +35,7 @@ export class TableRow extends Component {
             <Table.Cell>{rowValue.name}</Table.Cell>
             {weekData.map(day => (
               <Table.Cell key={day.id} disabled>
-                {day.weight}
+                {day[rowValue.key]}
               </Table.Cell>
             ))}
             {daysLeft}

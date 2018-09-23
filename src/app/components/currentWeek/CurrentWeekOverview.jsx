@@ -9,7 +9,6 @@ const data = [
   {
     id: cuid(),
     date: "09-17-2018",
-    day: "Monday",
     weight: 60.3,
     fatpercentage: 13.3,
     realizedCalories: 1940,
@@ -89,11 +88,45 @@ const data = [
     }
   }
 ];
+const lastWeekAveragesMockData = {
+  weight: 59.58,
+  fatpercentage: 13.42
+};
+const userMockData = {
+  id: cuid(),
+  firstName: "Joey",
+  lastName: "Bakx",
+  username: "djowie",
+  metric: "kg",
+  profilePicture: "https://randomuser.me/api/portraits/med/men/65.jpg",
+  lastWeightIn: {
+    weight: 60.2,
+    fatpercentage: 12.9,
+    date: "2018-09-22T20:13:30+00:00"
+  },
+  averageStats: {
+    weight: 60.2,
+    fatpercentage: 12.9,
+    lastUpdated: "2018-09-22T20:13:30+00:00"
+  },
+  goal: "bulk",
+  level: "intermediate",
+  minDelta: 0.1133980925,
+  maxDelta: 0.226796185,
+  nutritionRatio: {
+    lastModifiedDate: "2018-09-22T22:12:06+00:00",
+    protein: 30,
+    carbs: 45,
+    fats: 25
+  }
+};
 
 export class CurrentWeekOverview extends Component {
   state = {
     weekStats: data,
-    daysLeft: 7 - data.length
+    daysLeft: 7 - data.length,
+    user: userMockData,
+    lastWeekAverages: lastWeekAveragesMockData
   };
 
   render() {
@@ -137,7 +170,12 @@ export class CurrentWeekOverview extends Component {
 
         <Table definition>
           <TableHeader weekData={this.state.weekStats} />
-          <TableRow weekData={this.state.weekStats} rowNames={rowValues} />
+          <TableRow
+            weekData={this.state.weekStats}
+            rowNames={rowValues}
+            lastWeekAverages={this.state.lastWeekAverages}
+            user={this.state.user}
+          />
         </Table>
       </div>
     );

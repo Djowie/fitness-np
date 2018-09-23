@@ -1,0 +1,23 @@
+.green {
+  color: lightgreen;
+  float: right;
+  font-size: 12px;
+}
+
+.orange {
+  color: lightsalmon;
+  float: right;
+  font-size: 12px;
+}
+
+.red {
+  color: red;
+  float: right;
+  font-size: 12px;
+}
+
+.old {
+  font-size: 11px;
+  color: black;
+  float: right;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Container } from "semantic-ui-react";
 import HeaderNav from "../../components/header/header";
-import ProgressTable from "../../components/userStats/ProgressTable";
+import ProgressTable from "../../components/weeklyStats/ProgressTable";
 import ProfileCard from "../../components/userStats/ProfileCard";
 import { CurrentWeekOverview } from "../../components/currentWeek/CurrentWeekOverview";
 

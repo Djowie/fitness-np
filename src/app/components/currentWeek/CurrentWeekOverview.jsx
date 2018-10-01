@@ -4,6 +4,7 @@ import "./CurrentWeekOverview.css";
 import cuid from "cuid";
 import { TableHeader } from "./TableHeader";
 import { TableRow } from "./TableRow";
+
 // create temp mock object
 const data = [
   {
@@ -138,30 +139,12 @@ export class CurrentWeekOverview extends Component {
     }
 
     const rowValues = [
-      {
-        key: "weight",
-        name: "Weigh-in"
-      },
-      {
-        key: "fatpercentage",
-        name: "Fat Percentage"
-      },
-      {
-        key: "realizedCalories",
-        name: "Calories"
-      },
-      {
-        key: "protein",
-        name: "Protein"
-      },
-      {
-        key: "carbohydrates",
-        name: "Carboydrates"
-      },
-      {
-        key: "fats",
-        name: "Fats"
-      }
+      { key: "weight", name: "Weigh-in" },
+      { key: "fatpercentage", name: "Fat Percentage" },
+      { key: "realizedCalories", name: "Calories" },
+      { key: "protein", name: "Protein" },
+      { key: "carbohydrates", name: "Carboydrates" },
+      { key: "fats", name: "Fats" }
     ];
 
     return (

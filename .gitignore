@@ -8,6 +8,7 @@
 
 # production
 /build
+/src/firebaseConfjs
 
 # misc
 .DS_Store

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Icon, Button } from "semantic-ui-react";
+import { Table, Icon } from "semantic-ui-react";
 import "./TableRow.css";
 
 export class TableRow extends Component {
@@ -7,6 +7,7 @@ export class TableRow extends Component {
   runningAverage = (value, key) => {
     const array = [];
     //loop through all the values of state
+    // eslint-disable-next-line
     value.map(day => {
       array.push(day[key]);
     });
@@ -17,12 +18,10 @@ export class TableRow extends Component {
     //get delta goal values from user
     let minDelta = currentUser.minDelta;
     let maxDelta = currentUser.maxDelta;
-    let userGoal = currentUser.userGoal;
+    // let userGoal = currentUser.userGoal;
     //current delta, based on running average verus last average weight(week)
     let currentDelta = runningAverage - lastWeekAverages;
 
-    //create return value:
-    let value;
     //if currentDelta is higher than MAX we should notify the user
     //TODO: Perhaps we should also create an hover element
     //TODO: to show additional data.
@@ -83,8 +82,7 @@ export class TableRow extends Component {
           <Table.Row
             key={rowValue.key}
             textAlign="center"
-            verticalAlign="middle"
-          >
+            verticalAlign="middle">
             <Table.Cell>{rowValue.name}</Table.Cell>
             {weekData.map(day => (
               <Table.Cell key={day.id} disabled>

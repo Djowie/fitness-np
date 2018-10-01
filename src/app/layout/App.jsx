@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import Homepage from "./pages/Homepage";
+import AddFood from "../components/nutrition/AddFood";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Container className="main" fluid>
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          <Route exact path="/" component={AddFood} />
         </Switch>
 
         <Route
@@ -23,7 +24,7 @@ class App extends Component {
             </div>
           )}
         />
-      </div>
+      </Container>
     );
   }
 }

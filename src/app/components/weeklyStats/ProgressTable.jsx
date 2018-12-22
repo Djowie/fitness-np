@@ -3,6 +3,8 @@ import { Table, Icon } from "semantic-ui-react";
 import "./ProgressTable.css";
 
 export default class ProgressTable extends Component {
+  //TODO: Set an API response instead of mock data
+
   render() {
     return (
       <div>

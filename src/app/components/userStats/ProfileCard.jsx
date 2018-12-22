@@ -4,6 +4,7 @@ import cuid from "cuid";
 import moment from "moment";
 import { CurrentGoals } from "./goals/CurrentGoals";
 
+//TODO: change mockdata to API call response
 const userMockData = {
   id: cuid(),
   firstName: "Joey",
@@ -39,6 +40,7 @@ export class ProfileCard extends Component {
   render() {
     return (
       <div>
+        <h2>Profile</h2>
         <Card>
           <CardContent>
             <Card.Header>

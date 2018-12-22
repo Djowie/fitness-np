@@ -4,6 +4,7 @@ import HeaderNav from "../../components/header/header";
 import ProgressTable from "../../components/weeklyStats/ProgressTable";
 import ProfileCard from "../../components/userStats/ProfileCard";
 import { CurrentWeekOverview } from "../../components/currentWeek/CurrentWeekOverview";
+import { ProgressGraph } from "../../components/weeklyStats/ProgressGraph";
 
 export default () => {
   return (
@@ -26,6 +27,8 @@ export default () => {
           </Grid>
         </Grid.Row>
         <Grid.Row>
+          <ProgressGraph />
+
           <CurrentWeekOverview />
         </Grid.Row>
 

@@ -27,11 +27,8 @@ export default () => {
           </Grid>
         </Grid.Row>
         <Grid.Row>
-          <ProgressGraph />
-
           <CurrentWeekOverview />
         </Grid.Row>
-
         <Grid.Row>FOOTER</Grid.Row>
       </Grid>
     </Container>

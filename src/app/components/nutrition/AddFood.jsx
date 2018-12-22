@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import firebase from "../../../firebaseConf";
-
-import { Table, Form, Grid } from "semantic-ui-react";
+import "./addFood.css";
+import { Table, Form, Grid, Button } from "semantic-ui-react";
 
 export class AddFood extends Component {
   state = {
@@ -115,6 +115,8 @@ export class AddFood extends Component {
     }
   }
 
+  handleServingChanged() {}
+
   doSaveSomeFood() {
     //check whether to add or edit by uid
     if (this.state.selectedFood.uid === null) {
@@ -129,7 +131,7 @@ export class AddFood extends Component {
           name: this.state.selectedFood.name,
           brand: this.state.selectedFood.brand,
           calories: Number(this.state.selectedFood.calories),
-          carbs: Number(this.state.selectedFood.carbs),
+          carbs: this.state.selectedFood.carbs,
           protein: Number(this.state.selectedFood.protein),
           fats: Number(this.state.selectedFood.fats),
           fiber: Number(this.state.selectedFood.fiber),
@@ -142,8 +144,17 @@ export class AddFood extends Component {
           potassium: Number(this.state.selectedFood.potassium),
           sugar: Number(this.state.selectedFood.sugar),
           servings: this.state.selectedFood.servings
-        });
-      //TODO Ask Kevin what to do how to do errorhandling;
+        })
+        .then(
+          value => {
+            // Het is gelukt!
+          },
+          error => {
+            console.error(error);
+            // Er is wat fout gegaan
+          }
+        );
+      // TODO Ask Kevin what to do how to do errorhandling;
     } else {
       // update existing record
       firebase
@@ -152,6 +163,7 @@ export class AddFood extends Component {
         .collection("food")
         .doc("/" + this.state.selectedFood.uid)
         .update(this.state.selectedFood);
+      // TODO  Hier ook :-D - Kevin
     }
 
     // /food/{uid}/
@@ -173,19 +185,22 @@ export class AddFood extends Component {
 
     return (
       <div>
-        <Grid>
-          <Grid.Row column={2}>
+        <Grid className="addFoodContainer">
+          <Grid.Row>
+            <Form.Input
+              name="uid"
+              type="hidden"
+              value={this.state.selectedFood.uid || ""}
+            />
+          </Grid.Row>
+          <Grid.Row>
             <Grid.Column>
-              <h2>Input food</h2>
-              <Form onSubmit={this.doSaveSomeFood}>
+              <Form onSubmit={this.doSaveSomeFood} className="nutrition-form">
+                <h2>Add food</h2>
                 <Form.Group>
                   <Form.Input
-                    name="uid"
-                    type="hidden"
-                    value={this.state.selectedFood.uid || ""}
-                  />
-                  <Form.Input
                     label="Name"
+                    width={6}
                     placeholder="Name"
                     name="name"
                     value={this.state.selectedFood.name || ""}
@@ -194,6 +209,7 @@ export class AddFood extends Component {
                   />
                   <Form.Input
                     label="Brand"
+                    width={6}
                     placeholder="Brand"
                     name="brand"
                     value={this.state.selectedFood.brand || ""}
@@ -206,7 +222,12 @@ export class AddFood extends Component {
                     label="Calories"
                     placeholder="Calories"
                     name="calories"
-                    value={this.state.selectedFood.calories || ""}
+                    width={4}
+                    value={
+                      this.state.selectedFood.calories !== null
+                        ? this.state.selectedFood.calories
+                        : ""
+                    }
                     onChange={this.handleChange}
                     required
                   />
@@ -216,15 +237,25 @@ export class AddFood extends Component {
                     label="Carbohydrates"
                     placeholder="carbs"
                     name="carbs"
-                    value={this.state.selectedFood.carbs || ""}
+                    value={
+                      this.state.selectedFood.carbs !== null
+                        ? this.state.selectedFood.carbs
+                        : ""
+                    }
                     onChange={this.handleChange}
+                    width={3}
                     required
                   />
                   <Form.Input
                     label="Protein"
                     placeholder="protein"
                     name="protein"
-                    value={this.state.selectedFood.protein || ""}
+                    value={
+                      this.state.selectedFood.protein !== null
+                        ? this.state.selectedFood.protein
+                        : ""
+                    }
+                    width={3}
                     onChange={this.handleChange}
                     required
                   />
@@ -232,7 +263,12 @@ export class AddFood extends Component {
                     label="Fats"
                     placeholder="fats"
                     name="fats"
-                    value={this.state.selectedFood.fats || ""}
+                    width={3}
+                    value={
+                      this.state.selectedFood.fats !== null
+                        ? this.state.selectedFood.fats
+                        : ""
+                    }
                     onChange={this.handleChange}
                     required
                   />
@@ -243,7 +279,11 @@ export class AddFood extends Component {
                     placeholder=""
                     name="fiber"
                     width={2}
-                    value={this.state.selectedFood.fiber || ""}
+                    value={
+                      this.state.selectedFood.fiber !== null
+                        ? this.state.selectedFood.fiber
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                   <Form.Input
@@ -251,7 +291,11 @@ export class AddFood extends Component {
                     placeholder=""
                     name="sodium"
                     width={2}
-                    value={this.state.selectedFood.sodium || ""}
+                    value={
+                      this.state.selectedFood.sodium !== null
+                        ? this.state.selectedFood.sodium
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                   <Form.Input
@@ -259,7 +303,11 @@ export class AddFood extends Component {
                     placeholder=""
                     width={2}
                     name="potassium"
-                    value={this.state.selectedFood.potassium || ""}
+                    value={
+                      this.state.selectedFood.potassium !== null
+                        ? this.state.selectedFood.potassium
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                   <Form.Input
@@ -267,7 +315,11 @@ export class AddFood extends Component {
                     placeholder=""
                     width={2}
                     name="sugar"
-                    value={this.state.selectedFood.sugar || ""}
+                    value={
+                      this.state.selectedFood.sugar !== null
+                        ? this.state.selectedFood.sugar
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                 </Form.Group>
@@ -277,7 +329,11 @@ export class AddFood extends Component {
                     width={2}
                     placeholder=""
                     name="saturatedFats"
-                    value={this.state.selectedFood.saturatedFats || ""}
+                    value={
+                      this.state.selectedFood.saturatedFats !== null
+                        ? this.state.selectedFood.saturatedFats
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                   <Form.Input
@@ -285,7 +341,11 @@ export class AddFood extends Component {
                     placeholder=""
                     width={2}
                     name="polyFats"
-                    value={this.state.selectedFood.polyFats || ""}
+                    value={
+                      this.state.selectedFood.polyFats !== null
+                        ? this.state.selectedFood.polyFats
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                   <Form.Input
@@ -293,7 +353,11 @@ export class AddFood extends Component {
                     placeholder=""
                     width={2}
                     name="monoFats"
-                    value={this.state.selectedFood.monoFats || ""}
+                    value={
+                      this.state.selectedFood.monoFats !== null
+                        ? this.state.selectedFood.monoFats
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                   <Form.Input
@@ -301,7 +365,11 @@ export class AddFood extends Component {
                     placeholder=""
                     width={2}
                     name="transFats"
-                    value={this.state.selectedFood.transFats || ""}
+                    value={
+                      this.state.selectedFood.transFats !== null
+                        ? this.state.selectedFood.transFats
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                   <Form.Input
@@ -309,10 +377,15 @@ export class AddFood extends Component {
                     width={2}
                     placeholder=""
                     name="cholestrol"
-                    value={this.state.selectedFood.cholestrol || ""}
+                    value={
+                      this.state.selectedFood.cholestrol !== null
+                        ? this.state.selectedFood.cholestrol
+                        : ""
+                    }
                     onChange={this.handleChange}
                   />
                 </Form.Group>
+
                 <Form.Group>
                   <Form.Input
                     label="Serving size"
@@ -325,7 +398,7 @@ export class AddFood extends Component {
                   />
                   <Form.Input
                     label="Unit of Measure"
-                    width={2}
+                    width={3}
                     placeholder=""
                     name="servings-unitOfMeasure"
                     value={
@@ -335,7 +408,9 @@ export class AddFood extends Component {
                     required
                   />
                 </Form.Group>
-                <Form.Button type="submit">Submit</Form.Button>
+                <Button color="blue" type="submit" className="nutrition-submit">
+                  Submit
+                </Button>
               </Form>
             </Grid.Column>
           </Grid.Row>

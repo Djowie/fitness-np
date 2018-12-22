@@ -6,6 +6,7 @@ export default class ProgressTable extends Component {
   render() {
     return (
       <div>
+        <h2>Week Statistics</h2>
         <Table celled>
           <Table.Header>
             <Table.Row>
@@ -42,6 +43,7 @@ export default class ProgressTable extends Component {
             </Table.Row>
           </Table.Body>
         </Table>
+        Last sync: xx-xx-xx xx/xx/xx
       </div>
     );
   }

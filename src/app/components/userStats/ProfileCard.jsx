@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Card, Icon, Image, CardContent } from "semantic-ui-react";
 import cuid from "cuid";
 import moment from "moment";
+import { CurrentGoals } from "./goals/CurrentGoals";
 
 const userMockData = {
   id: cuid(),
@@ -70,7 +71,8 @@ export class ProfileCard extends Component {
                 moment(this.state.user.lastWeightIn.date).format("DD-MM-YYYY") +
                 ")"}
             </Card.Description>
-            <Card.Meta textAlign="right">
+            <Card.Meta textAlign="middle">
+              <CurrentGoals> </CurrentGoals>
               Goal:
               {this.state.user.goal === "bulk" && " Bulking "}
               {this.state.user.goal === "bulk" && (

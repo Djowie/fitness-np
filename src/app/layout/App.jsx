@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Container className="main" fluid>
         <Switch>
-          <Route exact path="/" component={AddFood} />
+          <Route exact path="/" component={Homepage} />
         </Switch>
 
         <Route
@@ -18,7 +18,7 @@ class App extends Component {
             <div>
               <Container className="main">
                 <Switch>
-                  <Route path="/test" component={Homepage} />
+                  <Route path="/test" component={test} />
                 </Switch>
               </Container>
             </div>

@@ -5,7 +5,7 @@ import cuid from "cuid";
 import { TableHeader } from "./TableHeader";
 import { TableRow } from "./TableRow";
 
-// create temp mock object
+// TODO: create API request to get data instead of Mock data
 const data = [
   {
     id: cuid(),
@@ -149,8 +149,7 @@ export class CurrentWeekOverview extends Component {
 
     return (
       <div>
-        <h1>CurrentWeek Overview Table</h1>
-
+        <h2>Current Week Statistics</h2>
         <Table definition>
           <TableHeader weekData={this.state.weekStats} />
           <TableRow
@@ -160,6 +159,7 @@ export class CurrentWeekOverview extends Component {
             user={this.state.user}
           />
         </Table>
+        Last sync: xx-xx-xx xx/xx/xx
       </div>
     );
   }

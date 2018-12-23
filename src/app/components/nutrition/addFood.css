@@ -1,0 +1,46 @@
+.addFoodContainer {
+  color: black;
+}
+
+.ui.form .field > label {
+  color: white;
+}
+
+.ui.form .required.field > .checkbox:after,
+.ui.form .required.field > label:after,
+.ui.form .required.fields.grouped > label:after,
+.ui.form .required.fields:not(.grouped) > .field > .checkbox:after,
+.ui.form .required.fields:not(.grouped) > .field > label:after {
+  margin: -0.2em 0 0 0.2em;
+  content: "*";
+  color: #ffa900;
+}
+
+h2 {
+  color: #013d30;
+  text-align: center;
+}
+
+.nutrition-form {
+  background: #bbd2c5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #536976,
+    #bbd2c5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #536976,
+    #bbd2c5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border: 1px white solid;
+  padding-inline-start: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 20px;
+}
+
+form.button {
+  color: #008cba;
+}

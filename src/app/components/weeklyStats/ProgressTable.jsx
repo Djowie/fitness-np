@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Icon } from "semantic-ui-react";
+import { Table } from "semantic-ui-react";
 import "./ProgressTable.css";
 import { ProgressGraph } from "./ProgressGraph";
 
@@ -65,7 +65,6 @@ export default class ProgressTable extends Component {
               <Table.HeaderCell>Average Weight</Table.HeaderCell>
               <Table.HeaderCell>Calorie Goal</Table.HeaderCell>
               <Table.HeaderCell>Average Calorie Realization</Table.HeaderCell>
-              <Table.HeaderCell>Weekly Delta</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>

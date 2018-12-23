@@ -4,34 +4,22 @@ import "./ProgressTable.css";
 import { ProgressGraph } from "./ProgressGraph";
 
 //TODO: Set an API response instead of mock data
-<<<<<<< HEAD
 const weeklyStat = [
-=======
-let weeklyStat = [
->>>>>>> fb348e75eade30e105fbdf7fd11e91b59c719155
   {
     weekNumber: 1,
     averageWeight: 60.2,
     calorieGoal: 2100,
     caloriesConsumed: 1849,
-<<<<<<< HEAD
     expectedWeightMin: 58.813,
     expectedWeightMax: 58.927
-=======
-    expectedWeightRange: "60.4 - 60.8"
->>>>>>> fb348e75eade30e105fbdf7fd11e91b59c719155
   },
   {
     weekNumber: 2,
     averageWeight: 60.6,
     calorieGoal: 2000,
     caloriesConsumed: 2049,
-<<<<<<< HEAD
     expectedWeightMin: 60.4,
     expectedWeightMax: 60.8
-=======
-    expectedWeightRange: "60.4 - 60.8"
->>>>>>> fb348e75eade30e105fbdf7fd11e91b59c719155
   }
 ];
 
@@ -64,13 +52,8 @@ const userMockData = {
   }
 };
 export default class ProgressTable extends Component {
-<<<<<<< HEAD
   //TODO: Set an API response instead of mock data
   state = { weeklyStat: weeklyStat, user: userMockData };
-=======
-  state = { weeklyStat: weeklyStat, user: userMockData };
-
->>>>>>> fb348e75eade30e105fbdf7fd11e91b59c719155
   render() {
     return (
       <div>
@@ -89,15 +72,9 @@ export default class ProgressTable extends Component {
               <Table.Row>
                 <Table.Cell disabled>{week.weekNumber}</Table.Cell>
                 <Table.Cell>
-<<<<<<< HEAD
                   {week.averageWeight}
                   <span className="weight-ranges">
                     {week.expectedWeightMin + " - " + week.expectedWeightMax}
-=======
-                  60.6{" "}
-                  <span className="weight-ranges">
-                    {week.expectedWeightRange}
->>>>>>> fb348e75eade30e105fbdf7fd11e91b59c719155
                   </span>
                 </Table.Cell>
                 <Table.Cell disabled>{week.calorieGoal}</Table.Cell>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 import "./ProgressTable.css";
-import { ProgressGraph } from "./ProgressGraph";
 
 //TODO: Set an API response instead of mock data
 const weeklyStat = [
@@ -15,6 +14,38 @@ const weeklyStat = [
   },
   {
     weekNumber: 2,
+    averageWeight: 60.6,
+    calorieGoal: 2000,
+    caloriesConsumed: 2049,
+    expectedWeightMin: 60.4,
+    expectedWeightMax: 60.8
+  },
+  {
+    weekNumber: 3,
+    averageWeight: 60.2,
+    calorieGoal: 2100,
+    caloriesConsumed: 1849,
+    expectedWeightMin: 58.813,
+    expectedWeightMax: 58.927
+  },
+  {
+    weekNumber: 4,
+    averageWeight: 60.6,
+    calorieGoal: 2000,
+    caloriesConsumed: 2049,
+    expectedWeightMin: 60.4,
+    expectedWeightMax: 60.8
+  },
+  {
+    weekNumber: 5,
+    averageWeight: 60.2,
+    calorieGoal: 2100,
+    caloriesConsumed: 1849,
+    expectedWeightMin: 58.813,
+    expectedWeightMax: 58.927
+  },
+  {
+    weekNumber: 6,
     averageWeight: 60.6,
     calorieGoal: 2000,
     caloriesConsumed: 2049,
@@ -57,7 +88,6 @@ export default class ProgressTable extends Component {
   render() {
     return (
       <div>
-        <h2>Week Statistics</h2>
         <Table celled>
           <Table.Header>
             <Table.Row>
@@ -99,7 +129,6 @@ export default class ProgressTable extends Component {
           </Table.Body>
         </Table>
         Last sync: xx-xx-xx xx/xx/xx
-        <ProgressGraph data={weeklyStat} />
       </div>
     );
   }

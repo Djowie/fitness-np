@@ -149,7 +149,6 @@ export class CurrentWeekOverview extends Component {
 
     return (
       <div>
-        <h2>Current Week Statistics</h2>
         <Table definition>
           <TableHeader weekData={this.state.weekStats} />
           <TableRow

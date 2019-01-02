@@ -131,7 +131,7 @@ export class AddFood extends Component {
           name: this.state.selectedFood.name,
           brand: this.state.selectedFood.brand,
           calories: Number(this.state.selectedFood.calories),
-          carbs: this.state.selectedFood.carbs,
+          carbs: Number(this.state.selectedFood.carbs),
           protein: Number(this.state.selectedFood.protein),
           fats: Number(this.state.selectedFood.fats),
           fiber: Number(this.state.selectedFood.fiber),
